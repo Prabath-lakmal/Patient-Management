@@ -1,0 +1,4 @@
+### Delete patient entity
+DELETE http://localhost:8080/patients/34442f8e-a077-493f-a5f9-a94b0d94ae82
+
+###
