@@ -1,3 +1,166 @@
+POST http://localhost:4000/patients
+Content-Type: application/json
+Content-Length: 198
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with billing account",
+  "email": "test_johnDoe_billing_Account@gmail.com",
+  "address": "123 main Street 21",
+  "dateOfBirth": "1992-09-09",
+  "registeredDate": "2025-10-27"
+}
+
+<> 2025-11-19T022812.200.json
+
+###
+
+POST http://localhost:4001/patients
+Content-Type: application/json
+Content-Length: 198
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with billing account",
+  "email": "test_johnDoe_billing_Account@gmail.com",
+  "address": "123 main Street 21",
+  "dateOfBirth": "1992-09-09",
+  "registeredDate": "2025-10-27"
+}
+
+<> 2025-11-19T002125.404.json
+
+###
+
+POST http://localhost:4001/patients
+Content-Type: application/json
+Content-Length: 198
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with billing account",
+  "email": "test_johnDoe_billing_Account@gmail.com",
+  "address": "123 main Street 21",
+  "dateOfBirth": "1992-09-09",
+  "registeredDate": "2025-10-27"
+}
+
+<> 2025-11-19T002123.404.json
+
+###
+
+POST http://localhost:4001/patients
+Content-Type: application/json
+Content-Length: 198
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with billing account",
+  "email": "test_johnDoe_billing_Account@gmail.com",
+  "address": "123 main Street 21",
+  "dateOfBirth": "1992-09-09",
+  "registeredDate": "2025-10-27"
+}
+
+<> 2025-11-19T002106.404.json
+
+###
+
+GRPC localhost:9001/BillingService/CreateBillingAccountGRPC localhost:9001/BillingService/CreateBillingAccountGRPC localhost:9001/BillingService/CreateBillingAccountGET http://localhost:8080/patients
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-11-14T012350.200.json
+
+###
+
+PUT http://localhost:8080/patients/123e4567-e89b-12d3-a456-426614174000
+Content-Type: application/json
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe",
+  "email": "johnDoe1@gmail.com",
+  "address": "123 main Street",
+  "dateOfBirth": "1992-09-09",
+  "registeredDate": "2025-10-27"
+}
+
+<> 2025-11-14T012339.200.json
+
+###
+
+PUT http://localhost:8080/patients/34442f8e-a077-493f-a5f9-a94b0d94ae82
+Content-Type: application/json
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe",
+  "email": "johnDoe1@gmail.com",
+  "address": "123 main Street",
+  "dateOfBirth": "1992-09-09",
+  "registeredDate": "2025-10-27"
+}
+
+<> 2025-11-14T012149.400.json
+
+###
+
+GET http://localhost:8080/patients
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-11-14T012136.200.json
+
+###
+
+POST http://localhost:8080/patients
+Content-Type: application/json
+Content-Length: 153
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe",
+  "email": "johnDoe@gmail.com",
+  "address": "123 main Street",
+  "dateOfBirth": "1992-09-09",
+  "registeredDate": "2025-10-27"
+}
+
+<> 2025-11-14T012128.200.json
+
+###
+
+GET http://localhost:8080/patients
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-11-14T012038.200.json
+
+###
+
 PUT http://localhost:8080/patients/34442f8e-a077-493f-a5f9-a94b0d94ae82
 Content-Type: application/json
 Content-Length: 154
@@ -670,16 +833,6 @@ Accept: */*
 }
 
 <> 2025-10-27T021255.200.json
-
-###
-
-GET http://localhost:4000/patients
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-content-length: 0
-
-<> 2025-10-26T020005.200.json
 
 ###
 

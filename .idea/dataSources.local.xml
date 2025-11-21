@@ -15,5 +15,24 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="patient-service-db" uuid="e3a977d0-1e7f-492e-8e89-4ab6c0a1e182">
+      <database-info product="PostgreSQL" version="18.0 (Debian 18.0-1.pgdg13+3)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.3" dbms="POSTGRES" exact-version="18.0" exact-driver-version="42.7">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>admin_user</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="patientdb@postgres" uuid="0af4c2b2-455a-4416-a8bd-8e7e53ce4333">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <schema-mapping />
+    </data-source>
   </component>
 </project>

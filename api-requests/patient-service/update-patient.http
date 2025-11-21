@@ -1,6 +1,6 @@
 ### Update and existing patient entity
 
-PUT http://localhost:8080/patients/34442f8e-a077-493f-a5f9-a94b0d94ae82
+PUT http://localhost:4000/patients/123e4567-e89b-12d3-a456-426614174000
 Content-Type: application/json
 
 {
