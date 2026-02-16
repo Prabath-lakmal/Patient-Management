@@ -4,8 +4,8 @@ POST http://localhost:4000/patients
 Content-Type: application/json
 
 {
-  "name": "John Doe with billing account",
-  "email": "test_johnDoe_billing_Account@gmail.com",
+  "name": "John Doe with kafka account",
+  "email": "test_kafka@gmail.com",
   "address": "123 main Street 21",
   "dateOfBirth": "1992-09-09",
   "registeredDate": "2025-10-27"

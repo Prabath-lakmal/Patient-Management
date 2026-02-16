@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY pom.xml .
 
-RUN mvn dependency:go-offline -B
+RUN mvn dependency:go-offline -B -Dmaven.wagon.http.retryHandler.count=3 -Dmaven.wagon.http.retryHandler.requestSentEnabled=true -Dhttp.keepAlive=false
 
 COPY src ./src
 
