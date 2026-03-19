@@ -41,6 +41,43 @@ public class LocalStack extends Stack {
         CfnCluster mskCluster = createMskCluster();
 
         this.ecsCluster = createEcsCluster();
+
+        FargateService authService =
+                createFargateService("AuthService",
+                        "auth-service",
+                        List.of(4005),
+                        authServiceDb,
+                        Map.of("JWT-SECRET", "U2VjdXJlS2V5Rm9ySldUQXV0aGVudGljYXRpb25MZW5ndGgyNTY="));
+
+        authService.getNode().addDependency(authDbHealthCheck);
+        authService.getNode().addDependency(authServiceDb);
+
+        FargateService billingService =
+                createFargateService("BillingService",
+                        "billing-service",
+                        List.of(4001,9001),
+                        null,
+                        null);
+        FargateService analyticsService =
+                createFargateService("AnalyticsService",
+                        "analytics-service",
+                        List.of(4002),
+                        null,
+                        null);
+
+        analyticsService.getNode().addDependency(mskCluster);
+
+        FargateService patientService = createFargateService("PatientService",
+                "patient-service",
+                List.of(4000),
+                patientServiceDb,
+                Map.of("BILLING_SERVICE_ADDRESS","host.docker.internal",
+                        "BILLING_SERVICE_GRPC_PORT","9001"));
+        patientService.getNode().addDependency(patientServiceDb);
+        patientService.getNode().addDependency(patientDbHealthCheck);
+        patientService.getNode().addDependency(billingService);
+        patientService.getNode().addDependency(mskCluster);
+
     }
 
     private Vpc createVpc(){
@@ -129,6 +166,7 @@ public class LocalStack extends Stack {
                                         .removalPolicy(RemovalPolicy.DESTROY)
                                         .retention(RetentionDays.ONE_DAY)
                                         .build())
+                                .streamPrefix(imageName)
                         .build()));
 
         Map<String, String> envVars =new HashMap<>();
@@ -155,7 +193,12 @@ public class LocalStack extends Stack {
         containerOptions.environment(envVars);
         taskDefinition.addContainer(imageName + "Container", containerOptions.build());
 
-
+        return FargateService.Builder.create(this, id)
+                .cluster(ecsCluster)
+                .taskDefinition(taskDefinition)
+                .assignPublicIp(false)
+                .serviceName(imageName)
+                .build();
     }
 
     public static void main(final String[] args){
